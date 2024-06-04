@@ -18,7 +18,7 @@ Jogo da forca feito para jogar sozinho no modo automático ou junto com alguem n
 <br>
 
 <p align="center"> 
-    <img alt="Jogo da Forca" src="https://ibb.co/d0MpDmk">
+    <img alt="Jogo da Forca" src="https://i.ibb.co/ynPkq4g/Screenshot-1.png">
 
 </p>
 
