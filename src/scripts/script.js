@@ -82,7 +82,7 @@ function loadList(){
         category: 'Animal'
     },
     word015 = {
-        name: 'Tubarão',
+        name: 'Tubarao',
         category: 'Animal'
     },
     word016 = {
@@ -123,8 +123,6 @@ function makeSecretWord() {
     const indexWord = parseInt(Math.random() * words.length)
     secretWordChoice = words[indexWord].name
     secretWordCategory = words[indexWord].category
-
-    console.log(secretWordChoice)
 }
 
 function makeWordScreen(){
