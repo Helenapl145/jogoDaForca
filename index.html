@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="./src/assets/icon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./src/css/style.css" />
+
+    <title>Jogo da Forca</title>
+  </head>
+  <body>
+    <div class="modal" id="modal-word">
+      <div class="modal-dialog modal-dialog-centered mb-0">
+        <div class="modal-content">
+          <div class="modal-header" id="modal-title">
+            <h2 class="modal-title">ADICIONAR PALAVRA</h2>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              &times;
+            </button>
+          </div>
+
+          <div class="modal-body d-flex flex-column">
+            <input
+              class="mb-4 border rounded p-2"
+              id="addWord"
+              type="password"
+              placeholder="PALAVRA"
+              required
+            />
+            <input
+              class="mb-4 border rounded p-2"
+              type="text"
+              id="addCategory"
+              placeholder="CATEGORIA"
+              required
+            />
+            <button
+              class="btn-warning border-0 rounded text-white font-weight-bold"
+              onclick="addNewWord()"
+            >
+              Adicionar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-warning">
+        <span>Modo Manual</span>
+      </div>
+    </div>
+
+    <div class="modal" id="resultModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="titlePopAlert"></h4>
+          </div>
+          <div class="modal-body" id="descPopAlert"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="container">
+      <div id="imgGame"></div>
+
+      <div id="secretWord"></div>
+
+      <div id="keyboard">
+        <div class="buttons">
+          <button
+            id="letter-A"
+            class="buttonWord"
+            onclick="verifyWordChoice('A')"
+          >
+            A
+          </button>
+          <button
+            id="letter-B"
+            class="buttonWord"
+            onclick="verifyWordChoice('B')"
+          >
+            B
+          </button>
+          <button
+            id="letter-C"
+            class="buttonWord"
+            onclick="verifyWordChoice('C')"
+          >
+            C
+          </button>
+          <button
+            id="letter-D"
+            class="buttonWord"
+            onclick="verifyWordChoice('D')"
+          >
+            D
+          </button>
+          <button
+            id="letter-E"
+            class="buttonWord"
+            onclick="verifyWordChoice('E')"
+          >
+            E
+          </button>
+          <button
+            id="letter-F"
+            class="buttonWord"
+            onclick="verifyWordChoice('F')"
+          >
+            F
+          </button>
+          <button
+            id="letter-G"
+            class="buttonWord"
+            onclick="verifyWordChoice('G')"
+          >
+            G
+          </button>
+          <button
+            id="letter-H"
+            class="buttonWord"
+            onclick="verifyWordChoice('H')"
+          >
+            H
+          </button>
+          <button
+            id="letter-I"
+            class="buttonWord"
+            onclick="verifyWordChoice('I')"
+          >
+            I
+          </button>
+        </div>
+        <div class="buttons">
+          <button
+            id="letter-J"
+            class="buttonWord"
+            onclick="verifyWordChoice('J')"
+          >
+            J
+          </button>
+          <button
+            id="letter-K"
+            class="buttonWord"
+            onclick="verifyWordChoice('K')"
+          >
+            K
+          </button>
+          <button
+            id="letter-L"
+            class="buttonWord"
+            onclick="verifyWordChoice('L')"
+          >
+            L
+          </button>
+          <button
+            id="letter-M"
+            class="buttonWord"
+            onclick="verifyWordChoice('M')"
+          >
+            M
+          </button>
+          <button
+            id="letter-N"
+            class="buttonWord"
+            onclick="verifyWordChoice('N')"
+          >
+            N
+          </button>
+          <button
+            id="letter-O"
+            class="buttonWord"
+            onclick="verifyWordChoice('O')"
+          >
+            O
+          </button>
+          <button
+            id="letter-P"
+            class="buttonWord"
+            onclick="verifyWordChoice('P')"
+          >
+            P
+          </button>
+          <button
+            id="letter-Q"
+            class="buttonWord"
+            onclick="verifyWordChoice('Q')"
+          >
+            Q
+          </button>
+          <button
+            id="letter-R"
+            class="buttonWord"
+            onclick="verifyWordChoice('R')"
+          >
+            R
+          </button>
+        </div>
+        <div class="buttons">
+          <button
+            id="letter-S"
+            class="buttonWord"
+            onclick="verifyWordChoice('S')"
+          >
+            S
+          </button>
+          <button
+            id="letter-T"
+            class="buttonWord"
+            onclick="verifyWordChoice('T')"
+          >
+            T
+          </button>
+          <button
+            id="letter-U"
+            class="buttonWord"
+            onclick="verifyWordChoice('U')"
+          >
+            U
+          </button>
+          <button
+            id="letter-V"
+            class="buttonWord"
+            onclick="verifyWordChoice('V')"
+          >
+            V
+          </button>
+          <button
+            id="letter-W"
+            class="buttonWord"
+            onclick="verifyWordChoice('W')"
+          >
+            W
+          </button>
+          <button
+            id="letter-Y"
+            class="buttonWord"
+            onclick="verifyWordChoice('Y')"
+          >
+            Y
+          </button>
+          <button
+            id="letter-X"
+            class="buttonWord"
+            onclick="verifyWordChoice('X')"
+          >
+            X
+          </button>
+          <button
+            id="letter-Z"
+            class="buttonWord"
+            onclick="verifyWordChoice('Z')"
+          >
+            Z
+          </button>
+          <button
+            id="clear"
+            class="buttonWord"
+            onclick="verifyWordChoice('CLEAR')"
+          >
+            <i class="fi fi-sr-trash"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="category"></div>
+
+      <div id="buttonsAux">
+        <i class="fi fi-br-arrows-repeat btnAddWord" id="repeatGame"></i>
+        <i class="fi fi-sr-text-box-edit btnAddWord" id="changeMode"></i>
+        <i class="fi fi-ss-gamepad btnAddWord" id="modeAuto"></i>
+      </div>
+    </div>
+
+    <footer class="fixed-bottom d-flex justify-content-center">
+      <span class="mb-2 text-primary" id="modeStart">Modo Automático</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./src/scripts/script.js"></script>
+  </body>
+</html>
