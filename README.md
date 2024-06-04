@@ -36,7 +36,7 @@ Jogo da forca feito para jogar sozinho no modo automático ou junto com alguem n
 
 Jogo da forca feito com o Java Script para a criação das funções necessárias para sortear, renderizar e conferir a palavra secreta seja ela produzida no modo automático que conta com uma lista já feita ou no modo manual com a criação de palavras personalizadas. <br>
 
-ALém disso, conta com uma interface feita tanto com CSS puro como Bootstrap para a elaboração dos modais, assim como também foi utilizado de icones e fontes configuradas para a aplicação que pode ser usada em qualquer dispositivo com internet a partir do link abaixo!
+Além disso, conta com uma interface feita tanto com CSS puro como Bootstrap para a elaboração dos modais, assim como também foi utilizado de icones e fontes configuradas para a aplicação que pode ser usada em qualquer dispositivo com internet a partir do link abaixo!
 
 - [Visite o projeto online](https://helenapl145.github.io/jogoDaForca/)
 
