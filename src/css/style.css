@@ -156,6 +156,10 @@ input {
         width: 15px;
     }
 
+    #keyboard {
+        margin-top: 2rem;
+    }
+
     #keyboard .buttons button{
         padding: 0.8rem;
         font-size: 0.8rem;
@@ -166,7 +170,7 @@ input {
     }
 
     #buttonsAux{
-        bottom: 30px;
+        bottom: 10px;
         right: 10px;
     }
 
